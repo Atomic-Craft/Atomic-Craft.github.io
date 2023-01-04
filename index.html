@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Minecraft Server</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Minecraft');
+		body {
+			font-family: 'Minecraft', sans-serif;
+			text-align: center;;
+			background-image: url('image.jpg');
+            background-size: cover;
+		}
+		h1 {
+			font-size: 3em;
+			color: #333333;
+			text-shadow: 2px 2px #8b8b8b;
+		}
+		p {
+			font-size: 1.5em;
+			color: #333333;
+			text-shadow: 2px 2px #8b8b8b;
+		}
+		.ip-container {
+  border: 5px solid #474a6d;
+  width: 450px;
+  height: 35px;
+  margin: 0 auto;
+  border-radius: 15px; 
+  background-color: #cccccc;
+}
+		.ip {
+			font-size: 2em;
+			color: #333333;
+			margin: 0 auto;
+		}
+		button {
+  font-size: 1em;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+button:hover {
+  color: #474a6d;
+}
+
+	</style>
+</head>	
+<body>
+	<h1>AtomicCraft</h1>
+	<p>Join us for endless adventure and building opportunities.</p>
+	<div class="ip-container">
+		<p class="ip">IP: 168.119.146.57:26505</p>
+		<button onclick="copyToClipboard('168.119.146.57:26505')">Copy</button>
+        <button onclick="toggleFrame()">Toggle live map</button>
+<div id="iframe-container" style="text-align: center;">
+  <iframe src="http://168.119.146.57:19414/" style="display: none"	 width="400" height="400"></iframe>
+</div>
+
+
+
+<script>
+function toggleFrame() {
+  var frame = document.getElementsByTagName('iframe')[0];
+
+  if (frame.style.display === 'none') {
+    frame.style.display = 'block';
+  } else {
+    frame.style.display = 'none';
+  }
+}
+</script>
+	  </div>
+	  
+	  <script>
+	  function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    console.log('Async: Copying to clipboard was successful!');
+    document.querySelector('button').textContent = 'Copied!';
+  }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+  });
+}
+</script>	  
